@@ -1,0 +1,108 @@
+<div class="stores-container">
+  <!-- Hero Banner -->
+  <div class="stores-banner">
+    <div class="container">
+      <h1>Our Store Locations</h1>
+      <p>Visit us at one of our premium retail locations</p>
+    </div>
+  </div>
+  
+  <div class="container">
+    <!-- Store Finder -->
+    <div class="store-finder">
+      <h2>Find a Store Near You</h2>
+      <div class="search-location">
+        <input 
+          type="text" 
+          placeholder="Enter your city or zip code" 
+          [(ngModel)]="locationSearch"
+          (input)="filterStores()"
+        >
+        <button>Search</button>
+      </div>
+    </div>
+    
+    <!-- Featured Stores -->
+    <div class="featured-stores">
+      <h2>Our Flagship Stores</h2>
+      <div class="flagship-grid">
+        @for (store of flagshipStores; track store.id) {
+          <div class="flagship-card">
+            <div class="flagship-image">
+              <img [src]="store.image" [alt]="store.name">
+            </div>
+            <div class="flagship-content">
+              <h3>{{store.name}}</h3>
+              <p class="address">{{store.address}}</p>
+              <p class="store-description">{{store.description}}</p>
+              <div class="store-details">
+                <div class="detail-item">
+                  <span class="label">Hours:</span>
+                  <span>{{store.hours}}</span>
+                </div>
+                <div class="detail-item">
+                  <span class="label">Phone:</span>
+                  <span>{{store.phone}}</span>
+                </div>
+              </div>
+              <div class="store-actions">
+                <button class="outline">Get Directions</button>
+                <button>Contact Store</button>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+    
+    <!-- All Stores -->
+    <div class="all-stores">
+      <h2>All Store Locations</h2>
+      <div class="stores-grid">
+        @for (store of filteredStores; track store.id) {
+          <div class="store-card">
+            <div class="store-image">
+              <img [src]="store.image" [alt]="store.name">
+            </div>
+            <div class="store-info">
+              <h3>{{store.name}}</h3>
+              <p class="address">{{store.address}}</p>
+              <div class="store-hours">
+                <span class="label">Hours:</span>
+                <span>{{store.hours}}</span>
+              </div>
+              <div class="store-actions">
+                <a href="#" class="store-link">View Details</a>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+  
+  <!-- Store Benefits -->
+  <div class="store-benefits">
+    <div class="container">
+      <h2>Visit Us In-Store</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <h3>Personal Styling</h3>
+          <p>Get expert advice from our in-store stylists. Book a free consultation during your visit.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Exclusive Products</h3>
+          <p>Some of our premium collections are only available for in-store purchase.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Same-Day Alterations</h3>
+          <p>Our flagship stores offer same-day basic alteration services for purchased items.</p>
+        </div>
+        <div class="benefit-card">
+          <h3>Loyalty Rewards</h3>
+          <p>Earn double points on all in-store purchases with your Loomify rewards account.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

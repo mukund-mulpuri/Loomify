@@ -1,0 +1,113 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="slide-in">QUALITY FABRICS FOR EVERY OCCASION</h1>
+      <p class="slide-in">Discover premium clothing from Loomify's exclusive collection</p>
+      <div class="hero-buttons slide-in">
+        <button routerLink="/products">Shop Now</button>
+        <button class="outline" routerLink="/stores">Find a Store</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Featured Categories -->
+  <section class="container">
+    <h2 class="section-title">Browse Categories</h2>
+    <div class="categories-grid">
+      @for (category of categories; track category.name) {
+        <div class="category-card">
+          <div class="category-image">
+            <img [src]="category.image" [alt]="category.name">
+          </div>
+          <div class="category-info">
+            <h3>{{category.name}}</h3>
+            <a [routerLink]="category.link">Shop Now</a>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+  
+  <!-- Featured Products -->
+  <section class="container">
+    <h2 class="section-title">Featured Products</h2>
+    <div class="products-grid">
+      @for (product of featuredProducts; track product.id) {
+        <!-- CORRECT -->
+<app-featured-product
+  *ngFor="let product of featuredProducts"
+  [product]="product">
+</app-featured-product>
+
+      }
+    </div>
+    <div class="text-center mt-4">
+      <button routerLink="/products">View All Products</button>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="https://images.pexels.com/photos/3839652/pexels-photo-3839652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="About Loomify">
+        </div>
+        <div class="about-content">
+          <h2>Our Story</h2>
+          <p>Loomify was founded with a passion for quality fabrics and craftsmanship. Since 2010, we've been providing premium clothing to customers nationwide.</p>
+          <p>Our mission is to create sustainable, high-quality clothing that stands the test of time. We source the finest materials from around the world and work with skilled artisans to create our exclusive collections.</p>
+          <button routerLink="/about">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Bulk Orders -->
+  <section class="bulk-order-section">
+    <div class="container">
+      <div class="bulk-content">
+        <h2>Bulk Orders for Businesses</h2>
+        <p>Looking for wholesale pricing? Loomify offers special rates for bulk orders to businesses, schools, and organizations.</p>
+        <button routerLink="/bulk-order">Request a Quote</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Store Locations -->
+  <section class="container">
+    <h2 class="section-title">Visit Our Stores</h2>
+    <div class="stores-grid">
+      @for (store of stores; track store.name) {
+        <div class="store-card">
+          <div class="store-image">
+            <img [src]="store.image" [alt]="store.name">
+          </div>
+          <div class="store-info">
+            <h3>{{store.name}}</h3>
+            <p>{{store.address}}</p>
+            <a routerLink="/stores">View Details</a>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="text-center mt-4">
+      <button routerLink="/stores">All Locations</button>
+    </div>
+  </section>
+  
+  <!-- Newsletter -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to our newsletter for exclusive offers and updates on new arrivals.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email address">
+          <button>Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,29 @@
+<header [ngClass]="{'scrolled': isScrolled}">
+  <div class="container header-container">
+    <div class="logo">
+      <a routerLink="/">
+        <h1>LOOMIFY</h1>
+      </a>
+    </div>
+    
+    <nav [ngClass]="{'open': isMobileMenuOpen}">
+      <ul>
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+        <li><a routerLink="/stores" routerLinkActive="active">Our Stores</a></li>
+        <li><a routerLink="/bulk-order" routerLinkActive="active">Bulk Orders</a></li>
+        <li><a routerLink="/about" routerLinkActive="active">About Us</a></li>
+      </ul>
+    </nav>
+    
+    <div class="header-actions">
+      <button class="outline" routerLink="/auth">Sign In</button>
+    </div>
+    
+    <button class="mobile-toggle" (click)="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>

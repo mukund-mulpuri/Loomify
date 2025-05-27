@@ -1,0 +1,60 @@
+<div class="auth-container">
+  <div class="auth-form-container">
+    <div class="auth-content">
+      <h2>{{ isLogin ? 'Sign In' : 'Create Account' }}</h2>
+      
+      <form (ngSubmit)="onSubmit()" #authForm="ngForm">
+        <div class="form-group" *ngIf="!isLogin">
+          <label for="name">Full Name</label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            [(ngModel)]="name" 
+            required 
+            placeholder="Enter your full name"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            [(ngModel)]="email" 
+            required 
+            placeholder="Enter your email"
+          >
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            [(ngModel)]="password" 
+            required 
+            placeholder="Enter your password"
+          >
+        </div>
+        
+        <button type="submit" class="auth-button">
+          {{ isLogin ? 'Sign In' : 'Create Account' }}
+        </button>
+      </form>
+      
+      <div class="auth-switch">
+        <p>
+          {{ isLogin ? 'Don\'t have an account?' : 'Already have an account?' }}
+          <a (click)="toggleForm()">{{ isLogin ? 'Sign Up' : 'Sign In' }}</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="auth-image">
+    <div class="overlay"></div>
+  </div>
+</div>

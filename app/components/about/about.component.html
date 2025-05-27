@@ -1,0 +1,128 @@
+<div class="about-container">
+  <!-- Hero Banner -->
+  <div class="about-banner">
+    <div class="container">
+      <h1>Our Story</h1>
+      <p>Crafting premium fabrics since 2010</p>
+    </div>
+  </div>
+  
+  <div class="container">
+    <!-- Our Story -->
+    <div class="story-section">
+      <div class="story-grid">
+        <div class="story-content">
+          <h2>The Loomify Journey</h2>
+          <p>Loomify was founded in 2010 with a singular vision: to create exceptional clothing using the finest fabrics sourced from around the world. What began as a small boutique in New York has grown into a national brand with a reputation for quality and craftsmanship.</p>
+          <p>Our founder, Jane Smith, spent decades in the textile industry before establishing Loomify. Her expertise in fabric selection and sustainable manufacturing practices remains at the core of our business today.</p>
+          <p>Every Loomify garment is designed to be timeless, durable, and comfortable. We believe that clothing should be an investment, not a disposable commodity.</p>
+        </div>
+        <div class="story-image">
+          <img src="https://images.pexels.com/photos/3839652/pexels-photo-3839652.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="The Loomify Journey">
+        </div>
+      </div>
+    </div>
+    
+    <!-- Our Values -->
+    <div class="values-section">
+      <h2>Our Values</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Quality</h3>
+          <p>We never compromise on the quality of our materials or craftsmanship. Each garment undergoes rigorous quality control before it reaches our customers.</p>
+        </div>
+        <div class="value-card">
+          <h3>Sustainability</h3>
+          <p>We're committed to responsible sourcing and production practices that minimize environmental impact and support ethical labor standards.</p>
+        </div>
+        <div class="value-card">
+          <h3>Innovation</h3>
+          <p>We continuously explore new fabrics, techniques, and designs to bring you clothing that exceeds expectations in comfort and durability.</p>
+        </div>
+        <div class="value-card">
+          <h3>Community</h3>
+          <p>We value the relationships we build with our customers, employees, and manufacturing partners. Together, we create something special.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Team Section -->
+    <div class="team-section">
+      <h2>Meet Our Team</h2>
+      <div class="team-grid">
+        @for (member of teamMembers; track member.name) {
+          <div class="team-card">
+            <div class="team-image">
+              <img [src]="member.image" [alt]="member.name">
+            </div>
+            <div class="team-info">
+              <h3>{{member.name}}</h3>
+              <p class="team-title">{{member.title}}</p>
+              <p class="team-bio">{{member.bio}}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+    
+    <!-- Milestones -->
+    <div class="milestones-section">
+      <h2>Our Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2010</div>
+          <div class="timeline-content">
+            <h3>The Beginning</h3>
+            <p>Loomify opens its first boutique in New York City, offering a small collection of premium cotton shirts and accessories.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2013</div>
+          <div class="timeline-content">
+            <h3>Expansion</h3>
+            <p>After three successful years, Loomify expands to include a full range of clothing and opens a second location in Los Angeles.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2016</div>
+          <div class="timeline-content">
+            <h3>Sustainability Pledge</h3>
+            <p>Loomify commits to sustainable manufacturing with our "Earth-First" initiative, transitioning to organic and recycled materials.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2019</div>
+          <div class="timeline-content">
+            <h3>National Reach</h3>
+            <p>With stores in 10 major cities and a robust online presence, Loomify becomes a nationally recognized brand for quality fabrics.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2022</div>
+          <div class="timeline-content">
+            <h3>Innovation Hub</h3>
+            <p>We launch the Loomify Innovation Center to research and develop the next generation of sustainable, high-performance fabrics.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">Today</div>
+          <div class="timeline-content">
+            <h3>Looking Forward</h3>
+            <p>With a focus on innovation and sustainability, Loomify continues to grow while staying true to our founding values.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Careers CTA -->
+  <div class="careers-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Join Our Team</h2>
+        <p>We're always looking for passionate people to help us create exceptional clothing</p>
+        <button>View Open Positions</button>
+      </div>
+    </div>
+  </div>
+</div>

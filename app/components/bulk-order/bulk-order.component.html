@@ -1,0 +1,206 @@
+<div class="bulk-container">
+  <!-- Hero Banner -->
+  <div class="bulk-banner">
+    <div class="container">
+      <h1>Bulk Orders</h1>
+      <p>Special rates for businesses, schools, and organizations</p>
+    </div>
+  </div>
+  
+  <div class="container">
+    <!-- Benefits Section -->
+    <div class="benefits-section">
+      <h2>Why Choose Loomify for Bulk Orders?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">D</div>
+          <h3>Discounted Pricing</h3>
+          <p>Enjoy special volume discounts on orders of 50+ items. The more you order, the more you save.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">C</div>
+          <h3>Custom Branding</h3>
+          <p>Add your logo or custom designs to any of our premium fabrics. Perfect for uniforms and events.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">D</div>
+          <h3>Dedicated Account Manager</h3>
+          <p>Work with a dedicated representative who will handle your order from quote to delivery.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">F</div>
+          <h3>Fast Turnaround</h3>
+          <p>Expedited production and shipping options available for time-sensitive orders.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Request Form -->
+    <div class="request-section">
+      <div class="request-grid">
+        <div class="request-info">
+          <h2>Request a Quote</h2>
+          <p>Fill out the form to receive a custom quote for your bulk order. Our team will respond within 24 hours.</p>
+          <div class="info-card">
+            <h3>What to Expect</h3>
+            <ol>
+              <li>Submit your inquiry using our form</li>
+              <li>Receive a confirmation email</li>
+              <li>Get a personalized quote within 24 hours</li>
+              <li>Review and approve your quote</li>
+              <li>Finalize your order details and payment</li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="request-form">
+          <form (ngSubmit)="submitRequest()">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                [(ngModel)]="bulkRequest.name" 
+                required
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                [(ngModel)]="bulkRequest.email" 
+                required
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                [(ngModel)]="bulkRequest.phone" 
+                required
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="company">Company/Organization</label>
+              <input 
+                type="text" 
+                id="company" 
+                name="company" 
+                [(ngModel)]="bulkRequest.company"
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="orderType">Order Type *</label>
+              <select 
+                id="orderType" 
+                name="orderType" 
+                [(ngModel)]="bulkRequest.orderType" 
+                required
+              >
+                <option value="">Select order type</option>
+                <option value="corporate">Corporate Uniforms</option>
+                <option value="event">Event Merchandise</option>
+                <option value="school">School/Team Apparel</option>
+                <option value="retail">Retail Wholesale</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="quantity">Estimated Quantity *</label>
+              <select 
+                id="quantity" 
+                name="quantity" 
+                [(ngModel)]="bulkRequest.quantity" 
+                required
+              >
+                <option value="">Select quantity range</option>
+                <option value="50-100">50-100 items</option>
+                <option value="101-250">101-250 items</option>
+                <option value="251-500">251-500 items</option>
+                <option value="500+">500+ items</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="deadline">Target Deadline</label>
+              <input 
+                type="date" 
+                id="deadline" 
+                name="deadline" 
+                [(ngModel)]="bulkRequest.deadline"
+              >
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Additional Details</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4" 
+                [(ngModel)]="bulkRequest.message"
+                placeholder="Tell us more about your requirements, including products, colors, and any customization needs."
+              ></textarea>
+            </div>
+            
+            <button type="submit" [disabled]="isSubmitting">
+              {{ isSubmitting ? 'Submitting...' : 'Request Quote' }}
+            </button>
+            
+            @if (showSuccess) {
+              <div class="success-message">
+                <p>Thank you for your inquiry! We'll contact you within 24 hours.</p>
+              </div>
+            }
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>What is the minimum order quantity?</h3>
+          <p>Our bulk pricing starts at 50 items per style. For orders below this threshold, please shop our regular retail collection.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does production take?</h3>
+          <p>Standard production time is 2-3 weeks after order confirmation. Rush options are available for an additional fee.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I order samples before placing a bulk order?</h3>
+          <p>Yes, we offer sample ordering for bulk clients. Sample costs will be credited toward your final order.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer international shipping for bulk orders?</h3>
+          <p>Yes, we ship bulk orders worldwide. International shipping costs and import duties will be included in your quote.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Call to Action -->
+  <div class="bulk-cta">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Need Immediate Assistance?</h2>
+        <p>Contact our bulk orders team directly</p>
+        <div class="cta-buttons">
+          <button>Call (800) 555-BULK</button>
+          <button class="outline">Email bulk&#64;loomify.com</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
